@@ -2,6 +2,8 @@
   $(function() {
     $('.lessons').sortable({
       update: function( event, ui ) {
+        alert("UpdateUrl: " + ui.item.data('update-url') + " Index: " + ui.item.index());
+      
       $.ajax({
         type: 'PUT',
         url: ui.item.data('update-url'),
